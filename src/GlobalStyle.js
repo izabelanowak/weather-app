@@ -1,16 +1,17 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-    html {
-        box-sizing: border-box;
-    }
+  html {
+    box-sizing: border-box;
+  }
 
-    *,
-    ::after,
-    ::before {
-        box-sizing: inherit;
-    }
+  *,
+  ::after,
+  ::before {
+    box-sizing: inherit;
+  }
 
-    body {
-    }
+  body {
+    font-family: 'Barlow', sans-serif;
+  }
 `;
