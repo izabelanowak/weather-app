@@ -1,8 +1,9 @@
+import { Container } from "./common/Container";
 import { Tile } from "./common/Tile";
 
 function App() {
   return (
-    <>
+    <Container>
       <Tile
         type="weather"
         value="Sunny"
@@ -10,6 +11,12 @@ function App() {
       <Tile
         type="temperature"
         value="33"
+      />
+      <Tile
+        type="temperatureVariation"
+        max="35"
+        min="27"
+
       />
       <Tile
         type="humidity"
@@ -35,7 +42,7 @@ function App() {
         type="daytime"
         value="13h 1m"
       />
-    </>
+    </Container>
   );
 }
 
