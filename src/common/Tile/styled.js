@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import { ReactComponent as downArrow } from "../../assets/downArrow.svg";
+import { ReactComponent as upArrow } from "../../assets/upArrow.svg";
 
 export const Wrapper = styled.div`
   width: 96px;
@@ -55,4 +57,30 @@ export const Label = styled.p`
       align-self: flex-start;
       margin-top: 24px;
   `}
+`;
+
+export const TemperatureVariation = styled.p`
+  color: ${({ theme }) => theme.colors.doveGray};
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.2;
+  display: flex;
+  margin: 6px 0;
+
+  ${({ small }) => small &&
+    css`
+      font-weight: 500;
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      color: ${({ theme }) => theme.colors.dustyGray};
+  `}
+`;
+
+export const UpArrow = styled(upArrow)`
+  margin-left: 2px;
+`;
+
+export const DownArrow = styled(downArrow)`
+  align-self: flex-end;
+  margin-left: 2px;
 `;

@@ -1,4 +1,4 @@
-import { Label, Value, Wrapper } from "./styled";
+import { Label, TemperatureVariation, Value, Wrapper, DownArrow, UpArrow } from "./styled";
 import { ReactComponent as HumidityIcon } from "../../assets/humidity.svg";
 import { ReactComponent as PressureIcon } from "../../assets/barometer.svg";
 import { ReactComponent as WindIcon } from "../../assets/wind.svg";
@@ -8,16 +8,20 @@ import { ReactComponent as DaytimeIcon } from "../../assets/sand-clock.svg";
 import { ReactComponent as DayIcon } from "../../assets/daySunny.svg";
 import { ReactComponent as NightIcon } from "../../assets/nightCloudy.svg";
 
-export const Tile = ({ type, value }) => {
+export const Tile = ({ type, value, max, min }) => {
   let icon;
   let labelText;
   let temperature = false;
   let weatherDescription = false;
+  let temperatureVariation = false;
 
   switch (type) {
     case "weather":
       icon = <DayIcon />
       weatherDescription = true;
+      break;
+    case "temperatureVariation":
+      temperatureVariation = true;
       break;
     case "temperature":
       temperature = true;
@@ -50,9 +54,23 @@ export const Tile = ({ type, value }) => {
   }
   return (
     <Wrapper temperature={temperature}>
-      {!temperature && icon}
-      <Value temperature={temperature} weatherDescription={weatherDescription}>{value}</Value>
-      <Label temperature={temperature}>{labelText}</Label>
+      {temperatureVariation
+        ?
+        <>
+          <TemperatureVariation>
+            {max}°C <UpArrow />
+          </TemperatureVariation>
+          <TemperatureVariation>
+            {min}°C <DownArrow />
+          </TemperatureVariation>
+        </>
+        :
+        <>
+          {!temperature && icon}
+          <Value temperature={temperature} weatherDescription={weatherDescription}>{value}</Value>
+          <Label temperature={temperature}>{labelText}</Label>
+        </>
+      }
     </Wrapper>
   );
 };
