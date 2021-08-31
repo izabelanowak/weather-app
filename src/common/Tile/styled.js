@@ -31,6 +31,13 @@ export const Value = styled.p`
       font-size: 64px;
       margin: 0;
   `}
+
+  ${({ weatherDescription }) => weatherDescription &&
+    css`
+      color: ${({ theme }) => theme.colors.black};
+      font-size: 18px;
+      margin: 0;
+  `}
 `;
 
 export const Label = styled.p`

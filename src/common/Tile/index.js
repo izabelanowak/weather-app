@@ -5,13 +5,20 @@ import { ReactComponent as WindIcon } from "../../assets/wind.svg";
 import { ReactComponent as SunriseIcon } from "../../assets/sunrise.svg";
 import { ReactComponent as SunsetIcon } from "../../assets/sunset.svg";
 import { ReactComponent as DaytimeIcon } from "../../assets/sand-clock.svg";
+import { ReactComponent as DayIcon } from "../../assets/daySunny.svg";
+import { ReactComponent as NightIcon } from "../../assets/nightCloudy.svg";
 
 export const Tile = ({ type, value }) => {
   let icon;
   let labelText;
   let temperature = false;
+  let weatherDescription = false;
 
   switch (type) {
+    case "weather":
+      icon = <DayIcon />
+      weatherDescription = true;
+      break;
     case "temperature":
       temperature = true;
       labelText = "°C";
@@ -44,7 +51,7 @@ export const Tile = ({ type, value }) => {
   return (
     <Wrapper temperature={temperature}>
       {!temperature && icon}
-      <Value temperature={temperature}>{value}</Value>
+      <Value temperature={temperature} weatherDescription={weatherDescription}>{value}</Value>
       <Label temperature={temperature}>{labelText}</Label>
     </Wrapper>
   );
