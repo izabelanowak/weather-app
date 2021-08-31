@@ -3,6 +3,10 @@ import { Tile } from "./common/Tile";
 function App() {
   return (
     <>
+     <Tile
+        type="temperature"
+        value="33"
+      />
       <Tile
         type="humidity"
         value="49%"

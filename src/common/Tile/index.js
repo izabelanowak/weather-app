@@ -9,8 +9,13 @@ import { ReactComponent as DaytimeIcon } from "../../assets/sand-clock.svg";
 export const Tile = ({ type, value }) => {
   let icon;
   let labelText;
+  let temperature = false;
 
   switch (type) {
+    case "temperature":
+      temperature = true;
+      labelText = "°C";
+      break;
     case "humidity":
       icon = <HumidityIcon />
       labelText = "Humidity";
@@ -37,10 +42,10 @@ export const Tile = ({ type, value }) => {
       break;
   }
   return (
-    <Wrapper>
-      {icon}
-      <Value>{value}</Value>
-      <Label>{labelText}</Label>
+    <Wrapper temperature={temperature}>
+      {!temperature && icon}
+      <Value temperature={temperature}>{value}</Value>
+      <Label temperature={temperature}>{labelText}</Label>
     </Wrapper>
   );
 };
