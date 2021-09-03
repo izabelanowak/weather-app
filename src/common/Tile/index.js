@@ -1,12 +1,12 @@
 import { Label, TemperatureVariation, Value, Wrapper, DownArrow, UpArrow } from "./styled";
-import { ReactComponent as HumidityIcon } from "../../assets/humidity.svg";
-import { ReactComponent as PressureIcon } from "../../assets/barometer.svg";
-import { ReactComponent as WindIcon } from "../../assets/wind.svg";
-import { ReactComponent as SunriseIcon } from "../../assets/sunrise.svg";
-import { ReactComponent as SunsetIcon } from "../../assets/sunset.svg";
-import { ReactComponent as DaytimeIcon } from "../../assets/sand-clock.svg";
-import { ReactComponent as DayIcon } from "../../assets/daySunny.svg";
-import { ReactComponent as NightIcon } from "../../assets/nightCloudy.svg";
+import { ReactComponent as HumidityIcon } from "./humidity.svg";
+import { ReactComponent as PressureIcon } from "./barometer.svg";
+import { ReactComponent as WindIcon } from "./wind.svg";
+import { ReactComponent as SunriseIcon } from "./sunrise.svg";
+import { ReactComponent as SunsetIcon } from "./sunset.svg";
+import { ReactComponent as DaytimeIcon } from "./sand-clock.svg";
+import { ReactComponent as DayIcon } from "./daySunny.svg";
+import { ReactComponent as NightIcon } from "./nightCloudy.svg";
 
 export const Tile = ({ type, value, max, min }) => {
   let icon;
